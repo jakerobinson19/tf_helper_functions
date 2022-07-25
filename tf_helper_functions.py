@@ -64,12 +64,12 @@ def plot_curves(history, height=None, width=None):
                                 showlegend=showlegend
                                 ), row=row, col=col)
         if "val_"+metric in df.columns: # Validation line
-        fig.add_trace(go.Scatter(name="Val", x=df.index+1, y=df[f"val_{metric}"],
-                                mode='lines+markers', line=dict(color="orange"),
-                                hovertemplate='Val '+ metric+': %{y:.2f}<extra></extra>',
-                                legendgroup="group1",
-                                showlegend=showlegend
-                                ), row=row, col=col)
+            fig.add_trace(go.Scatter(name="Val", x=df.index+1, y=df[f"val_{metric}"],
+                                    mode='lines+markers', line=dict(color="orange"),
+                                    hovertemplate='Val '+ metric+': %{y:.2f}<extra></extra>',
+                                    legendgroup="group1",
+                                    showlegend=showlegend
+                                    ), row=row, col=col)
         showlegend = False
         
     fig.update_layout(hovermode="x unified",
